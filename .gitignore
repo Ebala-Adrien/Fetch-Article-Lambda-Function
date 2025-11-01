@@ -47,6 +47,9 @@ jspm_packages/
 # Output of 'npm pack'
 *.tgz
 
+# Lambda deployment packages
+my_deployment_package.zip
+
 # Yarn Integrity file
 .yarn-integrity
 
