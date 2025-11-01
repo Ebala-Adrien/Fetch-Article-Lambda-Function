@@ -8,6 +8,9 @@ const scrapeSources = async (sourcesToScrape, categories) => {
     // Scrape each source
     for (const source of sourcesToScrape) {
         console.log(`🔍 Scraping source: ${source.name} (${source.language})`);
+        
+        // Track articles for this source to mark first 4 as headlines
+        const sourceArticles = [];
 
         for (const page of source.pages) {
             try {
@@ -39,7 +42,7 @@ const scrapeSources = async (sourcesToScrape, categories) => {
                         sourceName: source.name,
                     }));
 
-                    allArticles.push(...articlesWithMetadata);
+                    sourceArticles.push(...articlesWithMetadata);
                     totalFetched += result.articles.length;
                 } else {
                     console.error(`❌ Failed to scrape ${page.url}: ${result.error}`);
@@ -50,6 +53,19 @@ const scrapeSources = async (sourcesToScrape, categories) => {
                 errors.push(`Error scraping ${page.url}: ${error instanceof Error ? error.message : 'Unknown error'}`);
             }
         }
+
+        // Mark first 4 articles from this source as headlines
+        sourceArticles.forEach((article, index) => {
+            if (index < 4) {
+                article.isHeadline = true;
+                console.log(`📌 Marked article "${article.title}" as headline (position ${index + 1} from ${source.name})`);
+            } else {
+                article.isHeadline = false;
+            }
+        });
+
+        // Add all articles from this source to the main array
+        allArticles.push(...sourceArticles);
     }
 
     // Sort articles by category priority (articles with category first)

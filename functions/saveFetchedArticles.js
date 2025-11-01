@@ -39,6 +39,7 @@ const saveFetchedArticles = async (articles) => {
                 category: article.category,
                 language: article.language,
                 source: article.source,
+                isHeadline: article.isHeadline || false,
                 status: 'pending' // Will be processed by background job
             });
 

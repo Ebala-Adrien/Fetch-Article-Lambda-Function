@@ -188,6 +188,11 @@ const ArticleSchema = new Schema({
     index: true,
     default: null
   },
+  isHeadline: {
+    type: Boolean,
+    default: false,
+    index: true
+  }, // Knowing if the article is a headline would help us analyze it first and display it first in the app.
   
   // Reading metrics
   estimatedReadingTime: {
