@@ -31,10 +31,10 @@ const saveFetchedArticles = async (articles) => {
             // Save article to database
             const savedArticle = await Article.create({
                 title: article.title,
-                url: article.url,
+                articleUrl: article.url,
                 author: article.author || 'unknown',
                 description: article.description || '',
-                imageUrl: article.imageUrl,
+                featuredImageUrl: article.imageUrl,
                 publicationDate: article.publishedDate || Date.now(),
                 category: article.category,
                 language: article.language,

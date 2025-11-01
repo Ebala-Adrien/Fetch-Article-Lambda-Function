@@ -113,6 +113,11 @@ const ArticleSchema = new Schema({
     maxlength: 10,
     index: true
   },
+  source: {
+    type: String,
+    enum: [ "bbc", "terra" ],
+    index: true
+  },
   
   // Media
   featuredImageUrl: {
@@ -131,6 +136,8 @@ const ArticleSchema = new Schema({
   articleUrl: {
     type: String,
     maxlength: 500,
+    required: true,
+    unique: true,
     index: true
   },
   
@@ -228,7 +235,7 @@ const ArticleSchema = new Schema({
     default: 0,
     min: 0,
     index: true
-  }
+  },
 }, {
   timestamps: true,
   collection: 'articles'

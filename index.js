@@ -19,13 +19,14 @@ export const handler = async (event) => {
 
     const { savedArticles, savedCount, duplicateCount } = await saveFetchedArticles(allArticles);
 
-    console.log(`\n ✅ Successfully saved ${savedCount} articles`);
-    console.log(`✅ Skipped ${duplicateCount} duplicate articles`);
+    // console.log(`\n ✅ Successfully saved ${savedCount} articles`);
+    // console.log(`✅ Skipped ${duplicateCount} duplicate articles`);
 
     const response = {
         statusCode: 200,
-        body: JSON.stringify({ totalFetched, savedCount, duplicateCount, errors, allArticles,  savedArticles }),
+        // body: JSON.stringify({ totalFetched, savedCount, duplicateCount, errors, allArticles,  savedArticles }),
     };
     return response;
 };
 
+handler({})
