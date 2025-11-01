@@ -24,8 +24,7 @@ export const handler = async (event) => {
 
     const response = {
         statusCode: 200,
-        // body: JSON.stringify({ allArticles, errors, totalFetched }),
-        body: { allArticles, errors, totalFetched, savedCount, duplicateCount, savedArticles },
+        body: { totalFetched, savedCount, duplicateCount, errors, allArticles,  savedArticles },
     };
     return response;
 };
