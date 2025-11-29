@@ -36,15 +36,15 @@ const TextElementSchema = new Schema({
   isStop: { type: Boolean, default: false },
   entityType: { type: String, default: null },
   // For separators and punctuation
-  type: { 
-    type: String, 
+  type: {
+    type: String,
     enum: ['word', 'separator', 'punctuation'],
     default: 'word'
   },
-  separatorType: { 
-    type: String, 
+  separatorType: {
+    type: String,
     enum: ['whitespace', 'newline', 'other'],
-    required: function() { return this.type === 'separator'; }
+    required: function () { return this.type === 'separator'; }
   }
 }, { _id: false });
 
@@ -76,8 +76,8 @@ const ContentBlockSchema = new Schema({
   quoteAuthor: { type: String },
   // For list blocks
   listItems: [{ type: String }],
-  listType: { 
-    type: String, 
+  listType: {
+    type: String,
     enum: ['ordered', 'unordered'],
     default: 'unordered'
   },
@@ -115,10 +115,10 @@ const ArticleSchema = new Schema({
   },
   source: {
     type: String,
-    enum: [ "bbc", "terra" ],
+    enum: ["bbc", "terra"],
     index: true
   },
-  
+
   // Media
   featuredImageUrl: {
     type: String,
@@ -128,10 +128,10 @@ const ArticleSchema = new Schema({
     type: String,
     maxlength: 200
   },
-  
+
   // Content structure
   content: [ContentBlockSchema],
-  
+
   // URLs
   articleUrl: {
     type: String,
@@ -140,20 +140,20 @@ const ArticleSchema = new Schema({
     unique: true,
     index: true
   },
-  
+
   // Text analysis metadata (global stats only)
   textAnalysis: {
     type: ArticleAnalysisSchema,
     default: null
   },
-  
+
   // Publication metadata
   publicationDate: {
     type: Date,
     required: true,
     index: true
   },
-  
+
   // Status and visibility
   status: {
     type: String,
@@ -162,7 +162,7 @@ const ArticleSchema = new Schema({
     default: 'pending',
     index: true
   },
-  
+
   // Processing metadata
   processingStartedAt: {
     type: Date,
@@ -176,7 +176,7 @@ const ArticleSchema = new Schema({
     type: String,
     default: null
   },
-  
+
   // SEO and metadata
   tags: [{
     type: String,
@@ -193,7 +193,7 @@ const ArticleSchema = new Schema({
     default: false,
     index: true
   }, // Knowing if the article is a headline would help us analyze it first and display it first in the app.
-  
+
   // Reading metrics
   estimatedReadingTime: {
     type: Number,
@@ -205,7 +205,7 @@ const ArticleSchema = new Schema({
     min: 0,
     default: 0
   },
-  
+
   // Analysis status
   analysisStatus: {
     type: String,
@@ -220,7 +220,7 @@ const ArticleSchema = new Schema({
     type: String,
     maxlength: 1000
   },
-  
+
   // Usage tracking for cleanup
   hasBeenRead: {
     type: Boolean,
@@ -245,6 +245,9 @@ const ArticleSchema = new Schema({
   timestamps: true,
   collection: 'articles'
 });
+
+// Compound index to prevent duplicate articles
+ArticleSchema.index({ title: 1, source: 1, language: 1 }, { unique: true });
 
 // Export the model
 const Article = mongoose.models.Article || mongoose.model('Article', ArticleSchema);

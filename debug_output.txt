@@ -1,0 +1,501 @@
+✅ MongoDB: Connected successfully
+--- Schema Indexes ---
+[
+  [
+    {
+      "title": 1
+    },
+    {
+      "background": true
+    }
+  ],
+  [
+    {
+      "description": 1
+    },
+    {
+      "background": true
+    }
+  ],
+  [
+    {
+      "author": 1
+    },
+    {
+      "background": true
+    }
+  ],
+  [
+    {
+      "language": 1
+    },
+    {
+      "background": true
+    }
+  ],
+  [
+    {
+      "source": 1
+    },
+    {
+      "background": true
+    }
+  ],
+  [
+    {
+      "articleUrl": 1
+    },
+    {
+      "unique": true,
+      "background": true
+    }
+  ],
+  [
+    {
+      "textAnalysis.lang": 1
+    },
+    {
+      "background": true
+    }
+  ],
+  [
+    {
+      "textAnalysis.model": 1
+    },
+    {
+      "background": true
+    }
+  ],
+  [
+    {
+      "publicationDate": 1
+    },
+    {
+      "background": true
+    }
+  ],
+  [
+    {
+      "status": 1
+    },
+    {
+      "background": true
+    }
+  ],
+  [
+    {
+      "category": 1
+    },
+    {
+      "background": true
+    }
+  ],
+  [
+    {
+      "isHeadline": 1
+    },
+    {
+      "background": true
+    }
+  ],
+  [
+    {
+      "analysisStatus": 1
+    },
+    {
+      "background": true
+    }
+  ],
+  [
+    {
+      "hasBeenRead": 1
+    },
+    {
+      "background": true
+    }
+  ],
+  [
+    {
+      "firstReadAt": 1
+    },
+    {
+      "background": true
+    }
+  ],
+  [
+    {
+      "lastReadAt": 1
+    },
+    {
+      "background": true
+    }
+  ],
+  [
+    {
+      "readCount": 1
+    },
+    {
+      "background": true
+    }
+  ],
+  [
+    {
+      "title": 1,
+      "source": 1,
+      "language": 1
+    },
+    {
+      "unique": true,
+      "background": true
+    }
+  ]
+]
+--- Existing Collection Indexes ---
+[
+  {
+    "v": 2,
+    "key": {
+      "_id": 1
+    },
+    "name": "_id_"
+  },
+  {
+    "v": 2,
+    "key": {
+      "title": 1
+    },
+    "name": "title_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "description": 1
+    },
+    "name": "description_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "author": 1
+    },
+    "name": "author_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "language": 1
+    },
+    "name": "language_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "textAnalysis.lang": 1
+    },
+    "name": "textAnalysis.lang_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "textAnalysis.model": 1
+    },
+    "name": "textAnalysis.model_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "publicationDate": 1
+    },
+    "name": "publicationDate_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "status": 1
+    },
+    "name": "status_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "category": 1
+    },
+    "name": "category_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "analysisStatus": 1
+    },
+    "name": "analysisStatus_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "language": 1,
+      "status": 1,
+      "publicationDate": -1
+    },
+    "name": "language_1_status_1_publicationDate_-1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "tags": 1,
+      "category": 1
+    },
+    "name": "tags_1_category_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "createdAt": -1
+    },
+    "name": "createdAt_-1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "wordCount": 1
+    },
+    "name": "wordCount_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "hasBeenRead": 1
+    },
+    "name": "hasBeenRead_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "firstReadAt": 1
+    },
+    "name": "firstReadAt_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "lastReadAt": 1
+    },
+    "name": "lastReadAt_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "readCount": 1
+    },
+    "name": "readCount_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "source": 1
+    },
+    "name": "source_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "isHeadline": 1
+    },
+    "name": "isHeadline_1",
+    "background": true
+  }
+]
+--- Creating Indexes ---
+--- Final Collection Indexes ---
+[
+  {
+    "v": 2,
+    "key": {
+      "_id": 1
+    },
+    "name": "_id_"
+  },
+  {
+    "v": 2,
+    "key": {
+      "title": 1
+    },
+    "name": "title_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "description": 1
+    },
+    "name": "description_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "author": 1
+    },
+    "name": "author_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "language": 1
+    },
+    "name": "language_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "textAnalysis.lang": 1
+    },
+    "name": "textAnalysis.lang_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "textAnalysis.model": 1
+    },
+    "name": "textAnalysis.model_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "publicationDate": 1
+    },
+    "name": "publicationDate_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "status": 1
+    },
+    "name": "status_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "category": 1
+    },
+    "name": "category_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "analysisStatus": 1
+    },
+    "name": "analysisStatus_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "language": 1,
+      "status": 1,
+      "publicationDate": -1
+    },
+    "name": "language_1_status_1_publicationDate_-1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "tags": 1,
+      "category": 1
+    },
+    "name": "tags_1_category_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "createdAt": -1
+    },
+    "name": "createdAt_-1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "wordCount": 1
+    },
+    "name": "wordCount_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "hasBeenRead": 1
+    },
+    "name": "hasBeenRead_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "firstReadAt": 1
+    },
+    "name": "firstReadAt_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "lastReadAt": 1
+    },
+    "name": "lastReadAt_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "readCount": 1
+    },
+    "name": "readCount_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "source": 1
+    },
+    "name": "source_1",
+    "background": true
+  },
+  {
+    "v": 2,
+    "key": {
+      "isHeadline": 1
+    },
+    "name": "isHeadline_1",
+    "background": true
+  }
+]
+⚠️ MongoDB: Disconnected
+✅ MongoDB: Disconnected
