@@ -8,8 +8,7 @@ export const handler = async (event) => {
         event = JSON.parse(event.body);
     }
 
-    // const { sources = ['all'], languages = ['en', 'sp', 'pt'], categories = ['all'], articles } = event;
-    const { sources = ['all'], languages = ['en'], categories = ['all'], articles } = event;
+    const { sources = ['all'], languages = ['en', 'sp', 'pt'], categories = ['all'], articles } = event;
 
     let allArticles = [];
     let errors = [];
