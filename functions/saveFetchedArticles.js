@@ -1,7 +1,6 @@
 import connectDB from "../database/connection.js";
 import Article from "../database/models/Article.js";
 
-
 const saveFetchedArticles = async (articles) => {
     await connectDB();
 
@@ -37,7 +36,9 @@ const saveFetchedArticles = async (articles) => {
                 featuredImageUrl: article.imageUrl,
                 publicationDate: article.publishedDate || Date.now(),
                 category: article.category,
-                language: article.language,
+                // MongoDB text indexes require valid ISO 639-1 language codes
+                // 'sp' is not valid - Spanish must be 'es'
+                language: article.language === 'sp' ? 'es' : article.language, // MongoDB 
                 source: article.source,
                 isHeadline: article.isHeadline || false,
                 status: 'pending' // Will be processed by background job
