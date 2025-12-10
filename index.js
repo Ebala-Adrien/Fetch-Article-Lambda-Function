@@ -4,9 +4,7 @@ import saveFetchedArticles from './functions/saveFetchedArticles.js';
 import validateArticles from './functions/utility/validateArticles.js';
 
 export const handler = async (event) => {
-    if (event.body) {
-        event = JSON.parse(event.body);
-    }
+    if (event.body) event = JSON.parse(event.body)
 
     const { sources = ['all'], languages = ['en', 'sp', 'pt'], categories = ['all'], articles } = event;
 
