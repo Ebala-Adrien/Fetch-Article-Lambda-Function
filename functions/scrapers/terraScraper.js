@@ -17,6 +17,9 @@ const terraPageScraper = async (url, category) => {
     const html = await res.text();
     const $ = load(html);
 
+    // Disregard the div with id "comentarios"
+    $('#comentarios').remove();
+
     // Extract articles from all news cards
     const articles = [];
     $('.card.card-news').each((index, card) => {

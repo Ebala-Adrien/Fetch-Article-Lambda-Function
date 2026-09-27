@@ -21,13 +21,19 @@ const bbcSpanishAndPortugueseHomepageScraper = async (url, category) => {
       const html = await res.text();
       const $ = load(html);
   
-       // Get all articles content
-       const articles = [];
+      // Disregard unwanted sections/classes
+      $('.css-1o3v5ug, .css-13c4x68, .css-13dl56m, .css-izkwdn').remove();
+
+      // Get all articles content
+      const articles = [];
   
       // Extract articles from all topic-promos lists
       $('ul[data-testid="topic-promos"] li').each((index, li) => {
         try {
           const $li = $(li);
+          if ($li.is('.css-1o3v5ug, .css-13c4x68, .css-13dl56m, .css-izkwdn') || $li.find('.css-1o3v5ug, .css-13c4x68, .css-13dl56m, .css-izkwdn').length > 0) {
+            return;
+          }
           const titleLink = $li.find('h3 a[href*="/portuguese/articles/"], h3 a[href*="/mundo/articles/"]').first();
           const title = titleLink.text().trim();
           const href = titleLink.attr('href') || '';
